@@ -1,11 +1,11 @@
 from rest_framework.views import APIView 
 from rest_framework.response import Response
 from django.contrib.auth.models import User
-from .serializers import UserSerializer
+from .serializers import UserRegisterSerializer
 
 class UserRegister(APIView):
     def post(self, request):
-        user_serializer_data = UserSerializer(data=request.POST)
+        user_serializer_data = UserRegisterSerializer(data=request.POST)
         if user_serializer_data.is_valid():
             User.objects.create_user(
                 username = user_serializer_data.validated_data['username'],
