@@ -22,6 +22,9 @@ class UserRegisterSerializer(serializers.ModelSerializer):
                        'username':{'validators':(clean_admin,)}
                        
                        }
+    def create(self, validated_data):
+        del validated_data['passwordConfirm']
+        return User.objects.create_user(**validated_data)
 
 
     # username = serializers.CharField(required = True,validators=[clean_admin])
