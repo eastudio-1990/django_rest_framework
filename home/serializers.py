@@ -11,15 +11,15 @@ class PersonSerializer(serializers.Serializer):
 
 
 
-class QuestionSerializer(serializers.Serializer):
-    class Meta:
-        model = Question
-        fields = '__all__' 
+class QuestionSerializer(serializers.ModelSerializer):
+     class Meta:
+         model = Question
+         fields = '__all__'
 
 
 
 
-class AnswerSerializer(serializers.Serializer):
+class AnswerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Answer
         fields = '__all__'
