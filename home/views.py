@@ -8,7 +8,7 @@ from permissions import IsOwnerOrReadOnly
 
 class Home(APIView):
 
-    permission_classes = [IsAdminUser,]
+    permission_classes = [IsAuthenticated,]
 
     def get(self,request):
         person = Person.objects.all()    
