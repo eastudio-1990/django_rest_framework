@@ -144,7 +144,13 @@ REST_FRAMEWORK = {
         'anon': '10/hour',
         'user': '1000/day'
     },
+    
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+
+      'DEFAULT_RENDERER_CLASSES': [
+          'rest_framework.renderers.JSONRenderer',
+       #  'rest_framework.renderers.AdminRenderer'
+   ]
 }
 
 SPECTACULAR_SETTINGS = {
